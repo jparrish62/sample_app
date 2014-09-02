@@ -1,14 +1,4 @@
-require 'securerandom'
-def secure_token
-token_file = Rails.root.join('.secret')
-if File.exist?(token_file)
-# Use the existing token.
-File.read(token_file).chomp
-else
-# Generate a new token and store it in token_file.
-token = SecureRandom.hex(64)
-File.write(token_file, token)
-token
-end
-end
-SampleApp::Application.config.secret_key_base = secure_token
+# Ruby on Rails Tutorial: sample application
+This is the sample application for
+the [*Ruby on Rails Tutorial*](http://railstutorial.org/)
+by [Michael Hartl](http://michaelhartl.com/).
